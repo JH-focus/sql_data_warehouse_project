@@ -4,7 +4,7 @@ This Script is responsible for setting up the tables in the database
 as Source Data
 */
 
-DROP TABLE IF EXISTS bronze.bronze.crm_cust_info;
+DROP TABLE IF EXISTS bronze.crm_cust_info;
 CREATE TABLE IF NOT EXISTS bronze.crm_cust_info (
   cst_id INT,
   cst_key VARCHAR(50),
