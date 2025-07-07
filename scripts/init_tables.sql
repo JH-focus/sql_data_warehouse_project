@@ -4,7 +4,7 @@ This Script is responsible for setting up the tables in the database
 as Source Data
 */
 
-DROP TABLE IF EXISTS bronze.bronze.crm_cust_info
+DROP TABLE IF EXISTS bronze.bronze.crm_cust_info;
 CREATE TABLE IF NOT EXISTS bronze.crm_cust_info (
   cst_id INT,
   cst_key VARCHAR(50),
@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS bronze.crm_cust_info (
   cst_create_date DATE
 );
 
-DROP TABLE IF EXISTS bronze.crm_prod_info
+DROP TABLE IF EXISTS bronze.crm_prod_info;
 CREATE TABLE IF NOT EXISTS bronze.crm_prod_info (
   prod_id INT,
   prod_key VARCHAR(50),
@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS bronze.crm_prod_info (
   prod_end_date TIMESTAMP
 );
 
-DROP TABLE IF EXISTS bronze.crm_sales_details
+DROP TABLE IF EXISTS bronze.crm_sales_details;
 CREATE TABLE IF NOT EXISTS bronze.crm_sales_details (
   sls_ord_num VARCHAR(50),
   sls_product_key VARCHAR(50),
@@ -39,20 +39,20 @@ CREATE TABLE IF NOT EXISTS bronze.crm_sales_details (
   sls_price INT
 );
 
-DROP TABLE IF EXISTS bronze.erp_cust_az12
+DROP TABLE IF EXISTS bronze.erp_cust_az12;
 CREATE TABLE IF NOT EXISTS bronze.erp_cust_az12 (
   erp_cust_id VARCHAR(50),
   erp_date_of_birth VARCHAR(50),
   erp_gender VARCHAR(50)
 );
 
-DROP TABLE IF EXISTS bronze.erp_loc_a101
+DROP TABLE IF EXISTS bronze.erp_loc_a101;
 CREATE TABLE IF NOT EXISTS bronze.erp_loc_a101 (
   erp_cust_id VARCHAR(50),
   erp_cust_country VARCHAR(50)
 );
 
-DROP TABLE IF EXISTS bronze.erp_px_cat_g1v2
+DROP TABLE IF EXISTS bronze.erp_px_cat_g1v2;
 CREATE TABLE IF NOT EXISTS bronze.erp_px_cat_g1v2 (
   erp_cust_id VARCHAR(50),
   erp_prod_category VARCHAR(50),
