@@ -6,10 +6,7 @@ This makes this method very fast but less flexible.
 */
 
 
-BULK INSERT bronze.crm_cust_info
+COPY bronze.crm_cust_info
 FROM 'C:\Users\gaukl\Downloads\sql-data-warehouse-project\datasets\cust_info'
-WITH (
-  FIRSTROW = 2,
-  FIELDTERMINATOR = ','
-  TABLOCK
-);
+DELIMITER ','
+CSV HEADER;
