@@ -16,11 +16,11 @@ TRUNCATE TABLE bronze.crm_sales_details;
 \COPY bronze.crm_cust_info FROM 'C:/Users/gaukl/Downloads/sql-data-warehouse-project/datasets/source_crm/sales_details.csv' DELIMITER ',' HEADER CSV
 
 TRUNCATE TABLE bronze.erp_cust_az12;
-\COPY bronze.crm_cust_info FROM 'C:/Users/gaukl/Downloads/sql-data-warehouse-project/datasets/source_crm/CUST_AZ12.csv' DELIMITER ',' HEADER CSV
+\COPY bronze.crm_cust_info FROM 'C:/Users/gaukl/Downloads/sql-data-warehouse-project/datasets/source_erp/CUST_AZ12.csv' DELIMITER ',' HEADER CSV
 
 TRUNCATE TABLE bronze.erp_loc_a101;
-\COPY bronze.crm_cust_info FROM 'C:/Users/gaukl/Downloads/sql-data-warehouse-project/datasets/source_crm/LOC_A101.csv' DELIMITER ',' HEADER CSV
+\COPY bronze.crm_cust_info FROM 'C:/Users/gaukl/Downloads/sql-data-warehouse-project/datasets/source_erp/LOC_A101.csv' DELIMITER ',' HEADER CSV
 
 TRUNCATE TABLE bronze.erp_px_cat_g1v2;
-\COPY bronze.crm_cust_info FROM 'C:/Users/gaukl/Downloads/sql-data-warehouse-project/datasets/source_crm/PX_CAT_G1V2.csv' DELIMITER ',' HEADER CSV
+\COPY bronze.crm_cust_info FROM 'C:/Users/gaukl/Downloads/sql-data-warehouse-project/datasets/source_erp/PX_CAT_G1V2.csv' DELIMITER ',' HEADER CSV
 
