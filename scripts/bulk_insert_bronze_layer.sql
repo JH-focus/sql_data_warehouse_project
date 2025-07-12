@@ -6,4 +6,8 @@ This makes this method very fast but less flexible.
 */
 
 
-\COPY bronze.crm_cust_info FROM 'C:/Users/gaukl/Downloads/sql-data-warehouse-project/datasets/cust_info' DELIMITER ',' CSV HEADER
+\COPY bronze.crm_cust_info 
+  FROM 'C:/Users/gaukl/Downloads/sql-data-warehouse-project/datasets/source_crm/cust_info.csv' 
+  DELIMITER ',' 
+  CSV HEADER
+
