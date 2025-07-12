@@ -6,7 +6,7 @@ This makes this method very fast but less flexible.
 */
 
 CREATE OR REPLACE PROCEDURE bronze.load_bronze
-LANGUAGE psql
+LANGUAGE plpgsql
 AS
 BEGIN
   TRUNCATE TABLE bronze.crm_cust_info;
