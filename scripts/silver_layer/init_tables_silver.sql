@@ -23,12 +23,13 @@ CREATE TABLE IF NOT EXISTS silver.crm_cust_info (
 
 CREATE TABLE IF NOT EXISTS silver.crm_prod_info (
   prod_id INT,
+  cat_id VARCHAR(50),
   prod_key VARCHAR(50),
   prod_nm VARCHAR(50),
   prod_cost INT,
   prod_line VARCHAR(50),
-  prod_start_date TIMESTAMP,
-  prod_end_date TIMESTAMP,
+  prod_start_date DATE,
+  prod_end_date DATE,
   dwh_create_date TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
