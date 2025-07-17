@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS silver.crm_cust_info (
   dwh_create_date TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE IF NOT EXISTS silver.crm_prod_info (
+CREATE TABLE IF NOT EXISTS silver.crm_prd_info (
   prd_id INT,
   cat_id VARCHAR(50),
   prd_key VARCHAR(50),
