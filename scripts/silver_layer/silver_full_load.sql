@@ -1,3 +1,20 @@
+/*
+======================================================================================================
+Stored Procedure: Load Silver Layer (Bronze -> Silver)
+======================================================================================================
+Script Purpose:
+	This Script executes the ETL process from the bronze layer to the silver layer. The raw data
+	in the bronze layer is being trimmed, optimized, enriched, transformed and standardized to 
+	better serve the purpose of analysing the data.
+Execution style:
+	The Script performs a full load, which means it truncates the tables of the silver layer
+	and afterwords inserts all the transformed data from the bronze layer.
+Parameters:
+	This procedure does not accept any parameters.
+
+CALL silver.load_silver();
+*/
+
 CREATE OR REPLACE PROCEDURE silver.load_silver()
 LANGUAGE plpgsql
 AS $body$
