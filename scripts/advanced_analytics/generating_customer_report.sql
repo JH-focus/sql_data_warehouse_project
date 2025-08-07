@@ -20,7 +20,7 @@ Highlights:
 		- average monthly spent
 =======================================================================================================
 */
-
+CREATE OR REPLACE VIEW gold.report_customers AS(
 WITH base_query AS (
 /*
 1.) the base query selects the core columns from our fact and dim tables, while already creating the age-column
@@ -42,6 +42,9 @@ WHERE order_date IS NOT NULL
 ),
 
 customer_aggregation AS(
+/*
+2.) customer_aggregation creates the derived columns that we need in our view from the base query (e.g. total_orders, total_sales)
+*/
 SELECT
 customer_key,
 customer_number,
@@ -63,6 +66,9 @@ age
 )
 
 SELECT
+/*
+3.) last query takes the refined input from customer_aggregation and enriches the data 
+*/
 customer_key,
 customer_number,
 customer_name,
@@ -93,5 +99,6 @@ END AS avg_order_value,
 CASE WHEN lifespan = 0 THEN total_sales
 	ELSE ROUND(total_sales / lifespan, 2)
 END AS avg_monthly_spent
-FROM customer_aggregation;
+FROM customer_aggregation
+);
 

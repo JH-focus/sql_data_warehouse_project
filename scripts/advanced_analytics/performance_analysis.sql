@@ -1,5 +1,7 @@
-/* Analyze the yearly performance of products by comparing their sales to both the
-average sales performance of the product and the previous year's sales */
+/* 
+Analyze the yearly performance of products by comparing their sales to both the
+average sales performance of the product and the previous year's sales 
+*/
 WITH yearly_product_sales AS (
 SELECT
 DATE_TRUNC('year', f.order_date) as order_year,

@@ -1,4 +1,6 @@
---Which categories contribute the most to the overall sales
+--Which categories contribute the most to the overall sales?
+--CTE category_sales in order to most clearly structure the code
+--CTE stands for common table expressions
 WITH category_sales AS(
 SELECT 
 category,
