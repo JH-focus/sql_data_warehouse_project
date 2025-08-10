@@ -118,3 +118,31 @@ ROW_NUMBER() OVER (PARTITION BY order_number ORDER BY order_date DESC) rn
 FROM gold.fact_sales f
 )
 WHERE rn = 1;
+
+--NTILE('numeric') to partition the data into equal chunks of rows
+--this is useful especially in order to do load_balancing
+SELECT
+NTILE(4) OVER (ORDER BY f.sales_amount DESC) bucket,
+f.order_number
+FROM gold.fact_sales f;
+
+--CUME_DIST() to do percentage analysis - cumulative distribution
+--PERCENT_RANK() to do percentage analysis - 
+--row_number / total_number_of_rows
+--be careful which column you use to ORDER BY -> this heavily impacts the percentage distribution
+WITH percentage_dist AS (
+SELECT
+p.product_name,
+p.cost,
+CUME_DIST() OVER (ORDER BY p.cost) AS cume_dist_demo,
+PERCENT_RANK() OVER (ORDER BY p.cost) AS percent_rank_demo
+FROM gold.fact_sales f
+LEFT JOIN gold.dim_products p
+ON p.product_key = f.product_key
+)
+
+SELECT
+product_name,
+CONCAT(cume_dist_demo * 100, '%') AS percentage
+FROM percentage_dist
+WHERE cume_dist_demo >= 0.4;
