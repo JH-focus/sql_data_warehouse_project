@@ -61,3 +61,28 @@ ON c.customer_key = crs.customer_key
 LEFT JOIN cte_customer_segments ccs
 ON c.customer_key = ccs.customer_key
 ORDER BY customer_rank;
+
+--loop and generate a sequence of numbers from 1 to 20
+--the cte has to be defined as "WITH RECURSIVE" in postgreSQL
+--postgresql doesn't limit the amount of times a recursive query can be executed
+WITH RECURSIVE series AS(
+	--Anchor query
+	SELECT
+	1 AS my_number
+	UNION ALL
+	--Recursive query
+	SELECT
+	my_number + 1
+	FROM Series
+	--define the number of iterations -> very important
+	WHERE my_number < 1000
+)
+
+--Main query that gets all the data from the recursive cte
+SELECT * FROM series;
+
+--the recursive query is useful when there is a hierarchical structure you can
+--iterate over (e.g. employees and their managers)
+
+
+
