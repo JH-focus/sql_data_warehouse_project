@@ -4,11 +4,10 @@ FROM gold.report_customers;
 
 DROP FUNCTION gold.customer_summary;
 
---define the function, together with the output table and the 
---parameters, that you want to make optional, as well as a default value 
-CREATE OR REPLACE FUNCTION gold.customer_summary(p_segment text DEFAULT 'vip')
+--define the function, toge
+CREATE OR REPLACE FUNCTION gold.customer_summary(p_segment text)
 RETURNS TABLE (
-  age_group VARCHAR(20),
+  age_group text,
   customer_segment VARCHAR(20),
   total_customers bigint,
   total_sales numeric
@@ -26,5 +25,5 @@ AS $$
 $$;
 
 --this calls the function, providing the option to specify the parameter 
---or use the default value, in this case 'vip'
-SELECT * FROM gold.customer_summary();
+--
+SELECT * FROM gold.customer_summary('regular');
